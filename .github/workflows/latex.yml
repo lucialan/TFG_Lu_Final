@@ -1,0 +1,23 @@
+name: Compilar TFG con LuaLaTeX
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código y fuentes
+        uses: actions/checkout@v4
+
+      - name: Compilar PDF (LuaLaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          compiler: lualatex
+          # Esto permite que el robot use las fuentes que subiste
+          args: "-file-line-error -halt-on-error -interaction=nonstopmode"
+
+      - name: Guardar PDF Final
+        uses: actions/upload-artifact@v4
+        with:
+          name: TFG_Lu_Final
+          path: main.pdf
