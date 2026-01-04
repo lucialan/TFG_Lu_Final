@@ -1,25 +1,19 @@
-name: Compilar TFG con LuaLaTeX
+name: Compilar TFG con LuaLaTeX y BibLaTeX
 on: [push]
 
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar el código y fuentes
+      - name: Descargar el código
         uses: actions/checkout@v4
 
-      - name: Compilar PDF (LuaLaTeX)
+      - name: Compilar PDF (LuaLaTeX + Biber)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           compiler: lualatex
-          # Esto permite que el robot use las fuentes que subiste
-      - name: Compilar PDF (LuaLaTeX)
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          compiler: lualatex
-          # Cambia la línea de abajo por esta, Lu ❤️:
+          # Estas instrucciones obligan a latexmk a hacer todas las pasadas por la biblio
           args: "-pdf -lualatex -file-line-error -halt-on-error -interaction=nonstopmode"
 
       - name: Guardar PDF Final
