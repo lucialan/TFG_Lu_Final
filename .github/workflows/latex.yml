@@ -14,7 +14,13 @@ jobs:
           root_file: main.tex
           compiler: lualatex
           # Esto permite que el robot use las fuentes que subiste
-          args: "-file-line-error -halt-on-error -interaction=nonstopmode"
+      - name: Compilar PDF (LuaLaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          compiler: lualatex
+          # Cambia la línea de abajo por esta, Lu ❤️:
+          args: "-pdf -lualatex -file-line-error -halt-on-error -interaction=nonstopmode"
 
       - name: Guardar PDF Final
         uses: actions/upload-artifact@v4
