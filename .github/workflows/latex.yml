@@ -8,13 +8,18 @@ jobs:
       - name: Descargar el código
         uses: actions/checkout@v4
 
+      - name: Configurar dependencias
+        run: sudo apt-get install biber
+
       - name: Compilar PDF (LuaLaTeX + Biber)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           compiler: lualatex
-          # Estas instrucciones obligan a latexmk a hacer todas las pasadas por la biblio
-          args: "-pdf -lualatex -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape"
+          args: >
+            -pdf -lualatex -shell-escape -file-line-error -interaction=nonstopmode
+          extra_runs: "biber"
+
       - name: Guardar PDF Final
         uses: actions/upload-artifact@v4
         with:
