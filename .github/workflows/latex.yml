@@ -5,36 +5,11 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
+      # Paso 1: Descargar el código
       - name: Descargar el código
         uses: actions/checkout@v4
 
-      - name: Instalar dependencias necesarias
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-luatex \
-            texlive-science \
-            biber
-
-      - name: Primera corrida con LuaLaTeX
-        run: lualatex -interaction=nonstopmode -halt-on-error main.tex
-
-      - name: Procesar bibliografía con Biber
-        run: biber main
-
-      - name: Segunda y tercera corrida con LuaLaTeX
-        run: |
-          lualatex -interaction=nonstopmode -halt-on-error main.tex
-          lualatex -interaction=nonstopmode -halt-on-error main.tex
-
-      - name: Guardar artefacto generado
-        uses: actions/upload-artifact@v4
-        with:
-          name: TFG_Final
-          path: main.pdf
-
+      # Paso 2: Instalar todas las dependencias necesarias
       - name: Instalar dependencias necesarias
         run: |
           sudo apt-get update
@@ -49,7 +24,29 @@ jobs:
             texlive-science \
             texlive-bibtex-extra \
             biber \
-            fontconfig  # <--- ¡Esto es vital para manejar los .TTF!
+            fontconfig
 
+      # Paso 3: Actualizar la base de datos de fuentes
       - name: Actualizar base de datos de fuentes
-        run: luaotfload-tool --update  # Esto ayuda a LuaLaTeX a encontrar tus .TTF
+        run: luaotfload-tool --update
+
+      # Paso 4: Primera corrida con LuaLaTeX
+      - name: Primera corrida con LuaLaTeX
+        run: lualatex -interaction=nonstopmode -halt-on-error main.tex
+
+      # Paso 5: Procesar bibliografía con Biber
+      - name: Procesar bibliografía con Biber
+        run: biber main
+
+      # Paso 6: Segunda y tercera corrida con LuaLaTeX
+      - name: Segunda y tercera corrida con LuaLaTeX
+        run: |
+          lualatex -interaction=nonstopmode -halt-on-error main.tex
+          lualatex -interaction=nonstopmode -halt-on-error main.tex
+
+      # Paso 7: Guardar el artefacto generado
+      - name: Guardar artefacto generado
+        uses: actions/upload-artifact@v4
+        with:
+          name: TFG_Final
+          path: main.pdf
