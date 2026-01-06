@@ -34,3 +34,22 @@ jobs:
         with:
           name: TFG_Final
           path: main.pdf
+
+      - name: Instalar dependencias necesarias
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-luatex \
+            texlive-xetex \
+            texlive-lang-spanish \
+            texlive-science \
+            texlive-bibtex-extra \
+            biber \
+            fontconfig  # <--- ¡Esto es vital para manejar los .TTF!
+
+      - name: Actualizar base de datos de fuentes
+        run: luaotfload-tool --update  # Esto ayuda a LuaLaTeX a encontrar tus .TTF
