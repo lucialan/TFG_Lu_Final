@@ -8,8 +8,10 @@ jobs:
       - name: Descargar el código
         uses: actions/checkout@v4
 
-      - name: Configurar dependencias
-        run: sudo apt-get update && sudo apt-get install -y biber
+      - name: Instalar dependencias necesarias
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-luatex biber
 
       - name: Primera corrida con LuaLaTeX
         run: lualatex -interaction=nonstopmode -halt-on-error main.tex
@@ -22,8 +24,8 @@ jobs:
           lualatex -interaction=nonstopmode -halt-on-error main.tex
           lualatex -interaction=nonstopmode -halt-on-error main.tex
 
-      - name: Guardar PDF Final
+      - name: Guardar artefacto generado
         uses: actions/upload-artifact@v4
         with:
-          name: TFG_Lu_Final
+          name: TFG_Final
           path: main.pdf
