@@ -9,16 +9,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configurar dependencias
-        run: sudo apt-get install biber
+        run: sudo apt-get update && sudo apt-get install -y biber
 
-      - name: Compilar PDF (LuaLaTeX + Biber)
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          compiler: lualatex
-          args: >
-            -pdf -lualatex -shell-escape -file-line-error -interaction=nonstopmode
-          extra_runs: "biber"
+      - name: Primera corrida con LuaLaTeX
+        run: lualatex -interaction=nonstopmode -halt-on-error main.tex
+
+      - name: Procesar bibliografía con Biber
+        run: biber main
+
+      - name: Segunda y tercera corrida con LuaLaTeX
+        run: |
+          lualatex -interaction=nonstopmode -halt-on-error main.tex
+          lualatex -interaction=nonstopmode -halt-on-error main.tex
 
       - name: Guardar PDF Final
         uses: actions/upload-artifact@v4
