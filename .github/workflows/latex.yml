@@ -11,7 +11,12 @@ jobs:
       - name: Instalar dependencias necesarias
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-luatex biber
+          sudo apt-get install -y \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-luatex \
+            texlive-science \
+            biber
 
       - name: Primera corrida con LuaLaTeX
         run: lualatex -interaction=nonstopmode -halt-on-error main.tex
