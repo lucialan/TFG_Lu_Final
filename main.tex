@@ -1,127 +1,107 @@
+% !TeX program = lualatex
 \documentclass[12pt, a4paper]{report}
 
-% ==============================================================================
-% 1. Configuración de Idioma y Fuentes (Guía Docente)
-% ==============================================================================
-\usepackage{fontspec} 
-\usepackage{polyglossia}
-\usepackage[version=4]{mhchem}
-\setmainlanguage{spanish}
-\setotherlanguage{english}
+% *1. Configuración de Idioma y Fuentes (Guía Docente)
 
-% REQUISITO FCQ: Fuente Times New Roman (Debe estar instalada en el sistema)
-\setmainfont{TIMES.TTF}[
+ \usepackage{fontspec}
+ \usepackage{microtype}
+ \usepackage{polyglossia}
+ \usepackage[version=4]{mhchem}
+ \setmainlanguage{spanish}
+ \setotherlanguage{english}
+
+  % ?  REQUISITO FCQ: Fuente Times New Roman (Debe estar instalada en el sistema)
+   \setmainfont{TIMES.TTF}[
     Path = ./fonts/,
     BoldFont = TIMESBD.TTF,
     ItalicFont = TIMESI.TTF,
-    BoldItalicFont = TIMESBI.TTF
-]
+    BoldItalicFont = TIMESBI.TTF]
 
-% ==============================================================================
-% 2. Formato de Página (Guía Docente)
-% ==============================================================================
-\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry} % MÁRGENES 2.5 CM (REQUISITO FCQ)
-\usepackage{setspace}
-\onehalfspacing % INTERLINEADO 1.5 LÍNEAS (REQUISITO FCQ)
 
-% PÁRRAFOS: Sin sangría, con espacio vertical entre ellos
-\setlength{\parindent}{0pt} % ELIMINA LA SANGRÍA (REQUISITO DEL USUARIO)
-\setlength{\parskip}{1em}  % Espacio vertical entre párrafos
+%* 2. Formato de Página (Guía Docente)
 
-% Para incluir PDFs (Portada y Declaración IA)
-\usepackage{pdfpages} 
-\usepackage{afterpage}
-\usepackage[hidelinks]{hyperref}
-% ==============================================================================
-% 3. Configuración de Capítulos (titlesec)
-% --- INICIO: MODIFICACIÓN PARA "TABLA" (Requisito del Usuario) ---
-\usepackage{caption} 
-\captionsetup[table]{name=Tabla}  
+  \usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry} % MÁRGENES 2.5 CM (REQUISITO FCQ)
+  \usepackage{setspace}
+  \onehalfspacing % INTERLINEADO 1.5 LÍNEAS (REQUISITO FCQ)
 
-% --- FIN: MODIFICACIÓN PARA "TABLA" ---
+  %? PÁRRAFOS: Sin sangría, con espacio vertical entre ellos
+   \setlength{\parindent}{0pt} % ELIMINA LA SANGRÍA (REQUISITO DEL USUARIO)
+   \setlength{\parskip}{1em}  % Espacio vertical entre párrafos
 
-% ==============================================================================
-\usepackage{titlesec}
+  %? Para incluir PDFs (Portada y Declaración IA)
+    \usepackage{pdfpages} 
+    \usepackage{afterpage}
+    \usepackage[hidelinks]{hyperref}
 
-% REQUISITO USUARIO: Capítulo sin la palabra "Capítulo", sin espacios grandes
-\titleformat{\chapter}[hang]
-  {\normalfont\bfseries\Huge}{\thechapter.}{0.5em}{\bfseries\Huge} 
-\titlespacing*{\chapter}
-  {0pt}{0pt}{1.5\baselineskip} % Sin espacio antes (0pt), sin espacio después (0pt), pero dejamos un espacio de una línea y media antes del texto para legibilidad.
+%* 3. Configuración de Capítulos (titlesec)
+  \usepackage{caption} 
+  \captionsetup[table]{name=Tabla}  
+  \usepackage{titlesec}
 
-% ==============================================================================
-% 4. Contenido Académico y Citas
-% ==============================================================================
-\usepackage{amsmath, amssymb}
-\usepackage{siunitx} % Unidades
-%\sisetup{local = ES} 
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{subcaption} 
-\usepackage{longtable}
+  %? REQUISITO USUARIO: Capítulo sin la palabra "Capítulo", sin espacios grandes
+    \titleformat{\chapter}[hang]{\normalfont\bfseries\Huge}{\thechapter.}{0.5em}{\bfseries\Huge} 
+    \titlespacing*{\chapter} {0pt}{0pt}{1.5\baselineskip} % Sin espacio antes (0pt), sin espacio después (0pt), pero dejamos un espacio de una línea y media antes del texto para legibilidad.
 
-% ==============================================================================
-% 4. Configuración de Citas y Bibliografía (APA Numerado)
-% ==============================================================================
-% AQUÍ ESTÁ LA CORRECCIÓN: Cargamos biblatex UNA SOLA VEZ con todas las opciones
-\usepackage[
+%* 4. Contenido Académico y Citas
+
+  \usepackage{amsmath, amssymb}
+  \usepackage{siunitx} % Unidades
+  \DeclareSIUnit{\angstrom}{\text{\AA}} % Definición del símbolo Angstrom
+  \usepackage{graphicx}
+  \usepackage{wrapfig}
+  \usepackage{subcaption} 
+  \usepackage{longtable}
+
+%* 4. Configuración de Citas y Bibliografía (APA Numerado)
+
+  \usepackage[
     backend=biber,
     style=apa,        % Usamos el estilo APA para la bibliografía
     sorting=nyt,      % Ordenar por Nombre, Año, Título
     language=spanish,
     citestyle=numeric % Forzamos que las citas en el texto sean números [1]
-]{biblatex}
+  ]{biblatex}
 
-% 1. Quitar la "sangría francesa" típica de APA (margen izquierdo a 0)
-\setlength{\bibhang}{0pt}
+    %* 4.1. Quitar la "sangría francesa" típica de APA (margen izquierdo a 0)
+ \setlength{\bibhang}{0pt}
 
-% 2. Añadir espacio entre cada referencia
-\setlength{\bibitemsep}{1.5\baselineskip}
-
-% --- INICIO DEL TRUCO DE MAGIA ---
-% Esto es necesario para que biblatex-apa acepte pintar los números
-\ExecuteBibliographyOptions{labelnumber}
-
-% Definimos que el número lleve corchetes [1]
-\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
-
-% Redefinimos el entorno de la bibliografía para que pinte la lista numérica
-\defbibenvironment{bibliography}
-  {\list
-     {\printtext[labelnumberwidth]{%
+    %* 4.2. Añadir espacio entre cada referencia
+    \setlength{\bibitemsep}{1.5\baselineskip}
+    \ExecuteBibliographyOptions{labelnumber}
+    \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+    \defbibenvironment{bibliography}
+    {\list
+        {\printtext[labelnumberwidth]{%
         \printfield{labelnumber}}}
-     {\setlength{\labelwidth}{\labelnumberwidth}%
+        {\setlength{\labelwidth}{\labelnumberwidth}%
       \setlength{\leftmargin}{\labelwidth}%
       \setlength{\labelsep}{\biblabelsep}%
       \addtolength{\leftmargin}{\labelsep}%
       \setlength{\itemsep}{1.5\baselineskip} 
       \setlength{\parsep}{\bibparsep}}}
-  {\endlist}
-  {\item}
-% --- FIN DEL TRUCO ---
+    {\endlist}
+    {\item}
 
-\addbibresource{Bibliografia.bib}
-% ==============================================================================
-% 5. PERSONALIZACIÓN DE FIGURAS (REQUISITO TUTORA: Figura 1, 2, 3...)
-% ==============================================================================
-\usepackage{chngcntr}
-\counterwithout{figure}{chapter}
-\counterwithout{table}{chapter}
-\usepackage{enumitem}
-\usepackage{multirow}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{float}
-\usepackage{microtype}
-%==============================================================================
+ \addbibresource{Bibliografia.bib}
 
-% --- Solución para que los enlaces NO se salgan del margen ---
-\setcounter{biburllcpenalty}{7000}
-\setcounter{biburlucpenalty}{8000}
-\setcounter{biburlnumpenalty}{9000}
-% ==============================================================================
-% META-DATOS DEL DOCUMENTO
-\hypersetup{
+%* 5. PERSONALIZACIÓN DE FIGURAS (REQUISITO TUTORA: Figura 1, 2, 3...)
+
+  \usepackage{chngcntr}
+  \counterwithout{figure}{chapter}
+  \counterwithout{table}{chapter}
+  \usepackage{enumitem}
+  \usepackage{multirow}
+  \usepackage{booktabs}
+  \usepackage{tabularx}
+  \usepackage{float}
+
+  % ? Solución para que los enlaces NO se salgan del margen ---
+    \setcounter{biburllcpenalty}{7000}
+    \setcounter{biburlucpenalty}{8000}
+    \setcounter{biburlnumpenalty}{9000}
+
+%? META-DATOS DEL DOCUMENTO
+  \hypersetup{
     pdftitle={ESTUDIO DE ALGUNAS ESTRUCTURAS DE COMPUESTOS INORGÁNICOS Y MODIFICACIONES DE SIMETRÍA}, % Pon el título exacto de tu TFG
     pdfauthor={Lucia Lan Burillo Blazquez},       % Tu nombre completo
     pdfsubject={Trabajo de Fin de Grado - Grado en Química}, % La asignatura o el tipo de trabajo
@@ -129,30 +109,24 @@
     pdfcreator={LaTeX},                 % Opcional: indica con qué se creó
     pdfproducer={luLaTeX},             % Opcional
     pdfdisplaydoctitle=true             % Muestra el título del documento en la barra de ventana en vez del nombre del archivo
-}
+  }
 
-% 6. INICIO DEL DOCUMENTO
-% ==============================================================================
+%* 6. INICIO DEL DOCUMENTO
+
 \begin{document}
 
-% ------------------------------------------------------------------------------
-% A. PORTADA (Num. no visible)
-% ------------------------------------------------------------------------------
-% REQUISITO FCQ: Insertar la portada como PDF (DOCX convertido a PDF)
-%\includepdf[pages=1]{gq-portada-tfg-2024-25.pdf} 
+
+% !A. PORTADA (Num. no visible)
+
+%! REQUISITO FCQ: Insertar la portada como PDF (DOCX convertido a PDF)
+%!\includepdf[pages=1]{gq-portada-tfg-2024-25.pdf} 
+
 \clearpage
 
-% ------------------------------------------------------------------------------
+%! DECLARACIÓN RESPONSABLE DE AUTORÍA (OBLIGATORIO)
+%! REQUISITO FCQ: Insertar el documento oficial (firmado) como PDF
+%!\includepdf[pages=1, pagecommand={\thispagestyle{plain}}]{declaracion-responsable-sobre-autoria-y-uso-etico-de-herramientras-de-inteligencia-artificial-06062025.pdf} 
 
-% ------------------------------------------------------------------------------
-
-
-
-% DECLARACIÓN RESPONSABLE DE AUTORÍA (OBLIGATORIO)
-% REQUISITO FCQ: Insertar el documento oficial (firmado) como PDF
-%\includepdf[pages=1, pagecommand={\thispagestyle{plain}}]{declaracion-responsable-sobre-autoria-y-uso-etico-de-herramientras-de-inteligencia-artificial-06062025.pdf} 
-
-% NOTA: Estas páginas preliminares se excluyen del Índice de Contenidos a menos que se añadan manualmente.
 
 % ÍNDICES (COMIENZAN LA NUMERACIÓN )
 \pagenumbering{arabic}
@@ -160,9 +134,7 @@
 \tableofcontents 
 \clearpage
 
-% ------------------------------------------------------------------------------
 % C. CUERPO PRINCIPAL DEL TFG
-% ------------------------------------------------------------------------------
 
 \chapter{Introducción}
 \setmainlanguage{english}
@@ -173,7 +145,7 @@
 \section{Theoretical Background}
  A crystal is defined as a solid material whose atoms are arranged in an orderly repeating pattern extending in all three spatial dimensions \cite{ashcroft1976solid}. The study of crystal structures is fundamental in materials science, as the arrangement of atoms directly influences the physical and chemical properties of materials \cite{callister2020materials}.
 
-The periodic order of the atoms is evident in different directions around each atom. The directions are non-coplanar and originate at each atom of the crystal. The axes are chosen by symmetry criteria. Once the axes are defined, the unit cell is established as the smallest portion of the crystal that, when repeated in space through translations along the axes, can recreate the entire crystal structure. Its geometry is defined by reticular parameters: the lengths of the edges (\(a\), \(b\), \(c\)) and the angles between them (\(\alpha\), \(\beta\), \(\gamma\)).
+ The periodic order of the atoms is evident in different directions around each atom. The directions are non-coplanar and originate at each atom of the crystal. The axes are chosen by symmetry criteria. Once the axes are defined, the unit cell is established as the smallest portion of the crystal that, when repeated in space through translations along the axes, can recreate the entire crystal structure. Its geometry is defined by reticular parameters: the lengths of the edges (\(a\), \(b\), \(c\)) and the angles between them (\(\alpha\), \(\beta\), \(\gamma\)).
  
  There are seven crystal systems based on the relationships between the unit cell parameters: cubic, tetragonal, orthorhombic, hexagonal, trigonal, monoclinic, and triclinic. Each system is characterized by specific constraints on the lengths and angles of the unit cell.
 
@@ -1042,14 +1014,14 @@ The periodic order of the atoms is evident in different directions around each a
 \chapter{Conclusiones}
  Resumen de hallazgos.
 
-% ------------------------------------------------------------------------------
+
 % D. REFERENCIAS BIBLIOGRÁFICAS (Num. Arábiga)
-% ------------------------------------------------------------------------------
+
 \clearpage
 \addcontentsline{toc}{chapter}{Bibliografía} % Se añade al índice como un elemento no numerado
 \printbibliography
 \nocite{*}
 
-% ------------------------------------------------------------------------------
+
 
 \end{document}
