@@ -1,4 +1,4 @@
-#Primer intento repositorio
+# Primer intento repositorio
 
 Para que tu TFG sea visualmente atractivo y menos denso ("coñazo"), lo ideal es introducir imágenes que resuman conceptos complejos de un solo vistazo. Teniendo en cuenta la bibliografía, aquí tienes tres sugerencias clave de imágenes que "venden" bien tu tema, clasificadas por su propósito:
 
