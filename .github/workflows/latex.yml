@@ -14,8 +14,7 @@ jobs:
           root_file: main.tex
           compiler: lualatex
           # Estas instrucciones obligan a latexmk a hacer todas las pasadas por la biblio
-          args: "-pdf -lualatex -file-line-error -halt-on-error -interaction=nonstopmode"
-
+          args: "-pdf -lualatex -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape"
       - name: Guardar PDF Final
         uses: actions/upload-artifact@v4
         with:
