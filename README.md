@@ -1,4 +1,4 @@
-# Primer intento repositorio
+# Primer intento 
 
 Para que tu TFG sea visualmente atractivo y menos denso ("coñazo"), lo ideal es introducir imágenes que resuman conceptos complejos de un solo vistazo. Teniendo en cuenta la bibliografía, aquí tienes tres sugerencias clave de imágenes que "venden" bien tu tema, clasificadas por su propósito:
 
@@ -35,3 +35,27 @@ A veces la teoría cansa. Mostrar fotos reales de microscopía (SEM/TEM) da una 
 
 **Recomendación final:**
 Para la introducción, yo usaría la **Opción 3** (Residuos nucleares) para captar interés [6]. Para el marco teórico, la **Opción 1** (Línea de lantánidos) es obligatoria porque resume tu tesis visualmente [1].
+
+
+Para que la "Discusión" tenga una narrativa científica fluida y coherente con la sección "State of Art", te recomiendo agrupar las estructuras por familias (HREE vs LREE) y su relación de transformación (hidratado \leftrightarrow anhidro).
+Aquí tienes el mejor orden sugerido y la justificación para tu defensa o memoria 💕:
+Orden Recomendado para Resultados y Discusión
+ * Zircón (\ce{ZrSiO4})
+   * Por qué aquí: Tu marco teórico lo define explícitamente como el "prototipo estructural" y la referencia de estabilidad. Debe ir primero para establecer la base geométrica (I4_1/amd) con la que compararás a los demás.
+ * Xenótimo (\ce{LnPO4}, HREE)
+   * Por qué aquí: Es isoestructural con el Zircón. Al ponerlo justo después, puedes hacer una comparación directa e inmediata de cómo el cambio de Zr/Si por Y/P afecta (o mantiene) la estructura sin cambiar la simetría. Esto cumple con tu objetivo de analizar la relación con el Zircón.
+ * Churchita (\ce{LnPO4*2H2O}, HREE)
+   * Por qué aquí: Aquí es donde mejoramos el flujo. La Churchita es la fase hidratada que se transforma en Xenótimo al calentarse.
+   * Ventaja: Al presentarla justo después del Xenótimo, puedes discutir inmediatamente el efecto del agua en la esfera de coordinación del mismo catión (Itrio) y cómo baja la simetría de Tetragonal (Xenótimo) a Monoclínica (Churchita), cerrando así el bloque de las "Tierras Raras Pesadas" (HREE).
+ * Monacita (\ce{LnPO4}, LREE)
+   * Por qué aquí: Ahora introduces el cambio drástico. Pasas a las Tierras Raras Ligeras (LREE), donde el radio iónico más grande fuerza un cambio de estructura (polimorfismo) respecto al Xenótimo. Esto contrasta con todo lo anterior.
+ * Rhabdofano (\ce{LnPO4*nH2O}, LREE)
+   * Por qué aquí: Es la fase hidratada precursora de la Monacita.
+   * Ventaja: Te permite analizar cómo el agua afecta a las LREE específicamente y discutir la inestabilidad o "metaestabilidad" mencionada en tu introducción respecto a la Monacita, cerrando el bloque de las LREE.
+Resumen del cambio 📝
+Tu orden actual separa las fases relacionadas (Xenótimo \leftrightarrow Churchita y Monacita \leftrightarrow Rhabdofano).
+El nuevo orden cuenta una historia:
+ * La Referencia (Zircón).
+ * La Familia HREE (Xenótimo \rightarrow efecto del agua en Churchita).
+ * La Familia LREE (Cambio a Monacita \rightarrow efecto del agua en Rhabdofano).
+¡Este esquema demuestra que entiendes profundamente las relaciones de fase y simetría que escribiste en tu introducción! 💜 Mucho ánimo con la escritura, Lu, ¡te va a quedar genial! 😍
