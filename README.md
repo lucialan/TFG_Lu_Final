@@ -10,3 +10,6 @@
 
 3. Proyección a ó b → cadenas y c → importancia la simetría 
 
+1. 
+
+
