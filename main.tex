@@ -308,7 +308,6 @@ Las coordenadas atómicas, factores de ocupación y parámetros térmicos isotr�
     \bottomrule
   \end{tabular}
 \end{table}
-
 Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.62, c = 6.00\) \si{\angstrom} y los ángulos \(\alpha = \beta = \gamma = 90^\circ\). El volumen de la celda unitaria es \(286.533\) \si{\cubic\angstrom}. Cada celda unitaria contiene 4 unidades de fórmula (\(Z=4\)); por lo tanto, la fórmula empírica es \ce{Zr4Si4O16}. La celda unitaria se muestra en las proyecciones a lo largo de los ejes \(a\), \(b\) y \(c\) en la Figura \ref{fig:zircon_uc}.
 
 \begin{figure}[H]
@@ -336,14 +335,14 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.62, c = 6.
 
 \vspace{0.5cm}
 
-\begin{minipage}[c]{0.70\textwidth} % Columna de TEXTO (Izquierda)
+\begin{minipage}[c]{0.75\textwidth} % Columna de TEXTO (Izquierda)
   \setlength{\parskip}{1em} % Mantiene espacio entre párrafos
   El entorno de coordinación del silicio conforma un tetraedro \ce{SiO4} aislado y cristalográficamente perfecto en cuanto a sus distancias de enlace, presentando cuatro enlaces Si--O idénticos de \SI{1.626}{\angstrom}. Esta uniformidad se refleja en un índice de distorsión de la longitud de enlace nulo (0.0000).
 
   Sin embargo, el poliedro no es un tetraedro geométrico ideal. El análisis de los ángulos de enlace revela una varianza angular de (\SI{97.71}{\degree})\(^2\) y un alargamiento cuadrático de 1.0238, valores que indican una compresión significativa del poliedro a lo largo del eje \(c\) (ver Figura \ref{fig:Zircón_big_a}). El volumen calculado para este poliedro es de \SI{2.13}{\cubic\angstrom}.
 \end{minipage}% <--- ¡IMPORTANTE: No borres este símbolo de porcentaje!
 \hfill
-\begin{minipage}[c]{0.25\textwidth} % Columna de IMAGEN (Derecha)
+\begin{minipage}[c]{0.20\textwidth} % Columna de IMAGEN (Derecha)
   \centering
   \begin{figure}[H]
     \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/ZIRCON_Td.png}
@@ -355,7 +354,7 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.62, c = 6.
 
 \vspace{0.5cm}
 
-\begin{minipage}[c]{0.3\textwidth}
+\begin{minipage}[c]{0.25\textwidth}
   \centering
   \begin{figure}[H]
     \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/ZIRCON_Dode.png}
@@ -364,57 +363,81 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.62, c = 6.
   \end{figure}
 \end{minipage}
 \hfill
-\begin{minipage}[c]{0.65\textwidth} % Columna de IMAGEN (Derecha)
+\begin{minipage}[c]{0.70\textwidth} % Columna de IMAGEN (Derecha)
   \setlength{\parskip}{1em} % Mantiene espacio entre párrafos
   Por su parte, el catión \ce{Zr^4+} presenta un número de coordinación 8, conformando un dodecaedro \ce{ZrO8} con una geometría más distorsionada que el tetraedro de silicio. A diferencia de este último, el entorno del zirconio no es equidistante: exhibe dos conjuntos de longitudes de enlace diferenciados, con cuatro enlaces más cortos de \SI{2.135}{\angstrom} y otros cuatro más largos de \SI{2.275}{\angstrom}.
 
-  Esta disparidad se refleja en un índice de distorsión de la longitud de enlace de 0.0318 (frente al valor nulo observado para el Si). La distancia media de enlace Zr--O resultante es de \SI{2.205}{\angstrom}, y el poliedro ocupa un volumen considerablemente mayor, de \SI{19.18}{\cubic\angstrom}, consistente con el mayor radio iónico del zirconio (ver Figuras \ref{fig:Zircón_big_a} y \ref{fig:Zircón_big_c}).
+  Esta disparidad se refleja en un índice de distorsión de la longitud de enlace de 0.0318 (frente al valor nulo observado para el Si). La distancia media de enlace Zr--O resultante es de \SI{2.205}{\angstrom}, y el poliedro ocupa un volumen considerablemente mayor, de \SI{19.18}{\cubic\angstrom}, consistente con el mayor radio iónico del zirconio.
 \end{minipage}
 \vspace{0.5cm}
 
-Estos poliedros están organizados en una red tridimensional que define la estructura del Zircón. En la Figura \ref{fig:Zircón_lattice}, se puede ver cómo los tetraedros \ce{SiO4} en amarillo comparten aristas de forma alternada e intercalada con los dodecaedros \ce{ZrO8} en azul, formando cadenas a lo largo del eje c. Estos, a su vez, comparten también aristas entre ellos.
-
-\begin{figure}[H]
+\begin{minipage}[c]{0.55\textwidth} % Columna de TEXTO (Izquierda)
+  \setlength{\parskip}{1em} % Mantiene espacio entre párrafos
+  Estos poliedros están organizados en una red tridimensional que define la estructura del Zircón. En la Figura \ref{fig:Zircón_lattice}, se puede ver cómo los tetraedros \ce{SiO4} en amarillo comparten aristas de forma alternada e intercalada con los dodecaedros \ce{ZrO8} en azul, formando cadenas a lo largo del eje c. Estos, a su vez, comparten también aristas entre ellos.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.40\textwidth} % Columna de IMAGEN (Derecha)
   \centering
-  \includegraphics[width=0.6\textwidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_pol_conex.png}
-  \caption{Red tridimensional del Zircón mostrando la disposición de los poliedros \ce{ZrO8} y \ce{SiO4}.}
-  \label{fig:Zircón_lattice}
-\end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_pol_conex.png}
+    \caption{Conexión de los poliedros del Zircón.}
+    \label{fig:Zircón_lattice}
+  \end{figure}
+\end{minipage}
+\vspace{0.5cm}
 
-En esta estructura, los iones \ce{Zr^4+} están coordinados por ocho átomos de oxígeno, formando poliedros \ce{ZrO8} que se disponen alrededor de los tetraedros \ce{SiO4}. Los tetraedros \ce{SiO4} están orientados de manera que sus vértices apuntan hacia los centros de los poliedros \ce{ZrO8}, creando una red tridimensional interconectada. Esta disposición resulta en una estructura robusta y estable, característica del Zircón. Las representaciones de los poliedros \ce{ZrO8} y \ce{SiO4}, así como del esqueleto de la estructura, se muestran en las Figuras \ref{fig:Zircón_big_a} y \ref{fig:Zircón_big_c}.
+En la proyección a lo largo del eje \(a\) (Figura \ref{fig:zircon_a_poly}), se observa una disposición ordenada de los poliedros \ce{ZrO8} y \ce{SiO4}, donde los tetraedros amarillos y los dodecaedros azules se alternan formando una red tridimensional. Esta vista resalta la simetría tetragonal de la estructura del Zircón.
 
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_a.png}
-    \caption{Proyección de los poliedros}
+    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_a0.png}
+    \caption{Distribución de los poliedros en el plano (1 0 0)}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/WIREFRAME/ZIRCON_a.png}
-    \caption{Proyección del esqueleto}
+    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_a1.png}
+    \caption{Distribución de los poliedros en el plano (2 0 0)}
   \end{subfigure}
-  \caption{Representaciones de los poliedros y del esqueleto en la celdilla unitaria del Zircón a lo largo del eje \(a\).}
-  \label{fig:Zircón_big_a}
+  \caption{Representaciones de los poliedros del Zircón a lo largo del eje \(a\).}
+  \label{fig:zircon_a_poly}
 \end{figure}
 
-La proyección a lo largo del eje \(b\) muestra una disposición similar de los poliedros \ce{ZrO8} y \ce{SiO4}, con una orientación diferente que resalta la simetría tetragonal de la estructura del Zircón.
-
-
+En la representación del esqueleto atómico (Figura \ref{fig:zircon_a_wire}), se observa la misma disposición ordenada de los átomos que conforman los poliedros \ce{ZrO8} y \ce{SiO4}, resaltando la simetría tetragonal de la estructura del Zircón.
 
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_c.png}
-    \caption{Proyección de los poliedros}
+    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/WIREFRAME/ZIRCON_a0.png}
+    \caption{Distribución del esqueleto en el plano (1 0 0)}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/WIREFRAME/ZIRCON_c.png}
-    \caption{Proyección del esqueleto}
+    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/WIREFRAME/ZIRCON_a1.png}
+    \caption{Distribución del esqueleto en el plano (2 0 0)}
   \end{subfigure}
-  \caption{Representaciones de los poliedros y del esqueleto en la celdilla unitaria del Zircón a lo largo del eje \(c\).}
-  \label{fig:Zircón_big_c}
+  \caption{Representaciones del esqueleto del Zircón a lo largo del eje \(a\).}
+  \label{fig:zircon_a_wire}
+\end{figure}
+
+La proyección a lo largo del eje \(b\) muestra una disposición similar de los poliedros \ce{ZrO8} y \ce{SiO4}, con una orientación diferente (giro de 90\(^\circ\)) que resalta la simetría tetragonal de la estructura del Zircón.
+
+La representacion de los poliedros a lo largo del eje \(c\) (Figura \ref{fig:zircon_c_poly}) revela una disposición ordenada de los poliedros \ce{ZrO8} y \ce{SiO4}, donde los tetraedros amarillos y los dodecaedros azules comparten vértices y forman una red tridimensional. Esta vista resalta la simetría tetragonal de la estructura del Zircón.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_c0.png}
+    \caption{Proyección de los poliedros en el plano (0 0 1)}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/POLYHEDRA/ZIRCON_c1.png}
+    \caption{Proyección del esqueleto en el plano (0 0 2)}
+  \end{subfigure}
+  \caption{Representaciones de los poliedros del Zircón a lo largo del eje \(c\).}
+  \label{fig:zircon_c_poly}
 \end{figure}
 
 
