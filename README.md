@@ -1,7 +1,3 @@
-Excelente pregunta. He revisado ambas secciones y entiendo tu preocupación: al ser estructuras isoestructurales (mismo grupo espacial I4₁/amd), es fácil caer en la repetición. Te propongo una estrategia para que la sección 3.2 sea comparativa y no descriptiva.
-
----
-
 ## **Estrategia: De la descripción a la comparación**
 
 ### **Enfoque actual (repetitivo):**
@@ -156,7 +152,3 @@ de celda a lo largo de la serie \ce{LnPO4}.
 | **Tabla de distorsión** | Individual | **Comparativa** con Zircón |
 | **Figuras de poliedros** | Todas | Reducir + añadir figura comparativa |
 | **Texto** | Descripción | Análisis de diferencias |
-
----
-
-¿Te gustaría que te ayude a redactar el texto completo de la sección 3.2 siguiendo esta estructura, o prefieres que te prepare un borrador como Pull Request?
