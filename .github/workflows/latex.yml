@@ -50,3 +50,12 @@ jobs:
         with:
           name: TFG_Final
           path: main.pdf
+    - name: Actualizar el lanzamiento (Release) 🚀
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ultima-version
+        name: "Última versión compilada 🎀"
+        body: "Este PDF se actualiza automáticamente cada vez que Lu sube cambios."
+        files: TFG_Final.pdf  # <--- Mira que este nombre coincida con tu PDF
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
