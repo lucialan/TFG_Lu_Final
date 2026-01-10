@@ -337,7 +337,16 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.62, c = 6.
 
 \begin{minipage}[c]{0.75\textwidth} % Columna de TEXTO (Izquierda)
   \setlength{\parskip}{1em} % Mantiene espacio entre párrafos
-  El entorno de coordinación del silicio define un tetraedro \ce{SiO4} aislado, característico de los neosilicatos. Este poliedro exhibe una perfección cristalográfica notable en cuanto a las distancias de enlace, con cuatro enlaces Si--O equivalentes de \SI{1.626}{\angstrom}, reflejando el sitio de Wyckoff \(4b\) con simetría puntual \(\bar{4}m2\). La uniformidad de las distancias se cuantifica mediante un índice de distorsión de la longitud de enlace nulo (BLD = 0.0000).
+  El entorno de coordinación del silicio define un tetraedro \ce{SiO4} aislado, característico de los neosilicatos. Este poliedro exhibe una perfección cristalográfica notable en cuanto a las distancias de enlace, con cuatro enlaces Si--O equivalentes de \SI{1.626}{\angstrom}, reflejando el sitio de Wyckoff \(4b\) con simetría puntual \(\bar{4}m2\). 
+  
+  La uniformidad de las distancias se cuantifica mediante el índice de distorsión de longitud de enlace (BLD, del inglés \textit{Bond Length Distortion}), definido como:
+
+  \begin{equation}
+    \text{BLD} = \frac{1}{n} \sum_{i=1}^{n} \frac{|d_i - \bar{d}|}{\bar{d}}
+    \label{eq:bld}
+  \end{equation}
+
+  donde \(n\) es el número de enlaces, \(d_i\) la distancia del enlace \(i\), y \(\bar{d}\) la distancia promedio. Un valor de BLD = 0 indica un poliedro geométricamente ideal, mientras que valores mayores reflejan mayor irregularidad en las distancias de enlace. En el caso del tetraedro \ce{SiO4} del zircón, el BLD = 0.0000 confirma la perfección de las distancias de enlace.
 
   No obstante, el análisis angular revela que el poliedro no corresponde a un tetraedro geométricamente ideal. La varianza angular de \SI{97.71}{\degree\squared} y el alargamiento cuadrático de 1.0238 evidencian una compresión apreciable del poliedro a lo largo del eje \(c\) cristalográfico, como se ilustra en la Figura \ref{fig:zircon_c_poly}. El volumen del tetraedro resultante es de \SI{2.13}{\cubic\angstrom}.
 \end{minipage}% <--- ¡IMPORTANTE: No borres este símbolo de porcentaje!
