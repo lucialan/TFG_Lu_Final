@@ -1,5 +1,12 @@
 name: Compilar TFG con LuaLaTeX y BibLaTeX
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build_latex:
@@ -30,32 +37,32 @@ jobs:
       - name: Actualizar base de datos de fuentes
         run: luaotfload-tool --update
 
-      # Paso 4: Primera corrida con LuaLaTeX
-      - name: Primera corrida con LuaLaTeX
+      - name: Compilar con LuaLaTeX (1)
         run: lualatex -interaction=nonstopmode -halt-on-error main.tex
 
-      # Paso 5: Procesar bibliografía con Biber
       - name: Procesar bibliografía con Biber
         run: biber main
 
-      # Paso 6: Segunda y tercera corrida con LuaLaTeX
-      - name: Segunda y tercera corrida con LuaLaTeX
+      - name: Compilar con LuaLaTeX (2 y 3)
         run: |
           lualatex -interaction=nonstopmode -halt-on-error main.tex
           lualatex -interaction=nonstopmode -halt-on-error main.tex
 
-      # Paso 7: Guardar el artefacto generado
-      - name: Guardar artefacto generado
+      - name: Renombrar PDF para release
+        run: mv main.pdf TFG_Lu_Final.pdf
+
+      - name: Subir artefacto del PDF
         uses: actions/upload-artifact@v4
         with:
-          name: TFG_Final
-          path: main.pdf
-    - name: Actualizar el lanzamiento (Release) 🚀
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ultima-version
-        name: "Última versión compilada 🎀"
-        body: "Este PDF se actualiza automáticamente cada vez que Lu sube cambios."
-        files: TFG_Final.pdf  # <--- Mira que este nombre coincida con tu PDF
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: TFG_Lu_Final
+          path: TFG_Lu_Final.pdf
+
+      - name: Publicar en Releases (Versiones)
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.run_number }}
+          name: "Versión automática #${{ github.run_number }}"
+          body: "PDF compilado automáticamente desde GitHub Actions."
+          files: TFG_Lu_Final.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
