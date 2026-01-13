@@ -88,6 +88,7 @@
   \usepackage{chngcntr}
   \counterwithout{figure}{chapter}
   \counterwithout{table}{chapter}
+    \counterwithout{equation}{chapter}
   \usepackage{enumitem}
   \usepackage{multirow}
   \usepackage{booktabs}
@@ -280,7 +281,7 @@ Biomedical Imaging: Recent investigations highlight the potential use of Churchi
 \chapter{Objetivo}
 El objetivo principal de este trabajo es el estudio cristalográfico comparativo de la familia de los ortofosfatos de lantánidos (\ce{LnPO4}). Se analizarán las estructuras del Zircón (\ce{ZrSiO4}) como aristotipo y su relación con las fases anhidras Xenótimo y Monacita, así como sus contrapartes hidratadas Churchita y Rhabdofano. El análisis se realizará mediante el software VESTA \cite{prog:vesta}, enfocándose en cómo la variación del radio iónico y la hidratación inducen modificaciones de simetría y cambios en el entorno de coordinación, determinando así sus propiedades y aplicaciones tecnológicas.
 
-\section{Procedimiento experimental}
+\chapter{Procedimiento experimental}
 Empleando el software de visualización y análisis cristalográfico VESTA\cite{prog:vesta}, se generaron las representaciones gráficas de las estructuras cristalinas de los compuestos estudiados. A continuación, se detallan las características estructurales de cada uno de los materiales analizados, incluyendo sus parámetros de celda, coordenadas atómicas, factores de ocupación y parámetros térmicos isotrópicos.
 
 \chapter{Resultados y Discusión}
@@ -331,7 +332,7 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.62, c = 6.
     \caption{Eje \(c\)}
     \label{fig:zircon_atoms_c}
   \end{subfigure}
-  \caption{Proyecciones de la celdilla unidad del zircón a lo largo de los ejes cristalográficos principales, mostrando la disposición de los átomos de Zr (verde), Si (azul) y O (rojo).}
+  \caption{Proyecciones de la celdilla unidad del zircón a lo largo de los ejes cristalográficos principales, mostrando la disposición de los átomos de Zr (verde), Si (azul) y O (gris).}
   \label{fig:zircon_uc}
 \end{figure}
 
@@ -344,13 +345,13 @@ La uniformidad de las distancias se cuantifica mediante el índice de distorsió
   \label{eq:bld}
 \end{equation}
 
-donde $n$ es el número de enlaces, $d_i$ la distancia del enlace $i$, y $\bar{d}$ la distancia promedio. Un valor de BLD = 0 indica un poliedro geométricamente ideal, mientras que valores mayores reflejan mayor irregularidad en las distancias de enlace.
+donde \(n\) es el número de enlaces, \(d_i\) la distancia del enlace \(i\), y \(\bar{d}\) la distancia promedio. Un valor de BLD = 0 indica un poliedro geométricamente ideal, mientras que valores mayores reflejan mayor irregularidad en las distancias de enlace.
 
 \vspace{0.5cm}
 
 \begin{minipage}[c]{0.75\textwidth} % Columna de TEXTO (Izquierda)
   \setlength{\parskip}{1em} % Mantiene espacio entre párrafos
-  El tetraedro \ce{SiO4} presenta cuatro enlaces equivalentes con varianza angular de \SI{97.71}{\degree\squared} y alargamiento cuadrático de 1.0238, indicando compresión axial. Volumen: \SI{2.13}{\cubic\angstrom}.
+  El tetraedro \ce{SiO4} presenta cuatro enlaces equivalentes con varianza angular de \SI{97.71}{\degree\squared} y alargamiento cuadrático de 1.0238, indicando compresión axial. Volumen: \SI{2.13}{\cubic\angstrom} (d = \SI{1.626}{\angstrom}, BLD = 0).
 \end{minipage}% <--- ¡IMPORTANTE: No borres este símbolo de porcentaje!
 \hfill
 \begin{minipage}[c]{0.20\textwidth} % Columna de IMAGEN (Derecha)
@@ -358,7 +359,7 @@ donde $n$ es el número de enlaces, $d_i$ la distancia del enlace $i$, y $\bar{d
   \begin{figure}[H]
     \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/ZIRCON_Td.png}
     \captionsetup{justification=centering}
-    \caption{Tetraedro \ce{SiO4} del zircón (d = \SI{1.626}{\angstrom}, BLD = 0).}
+    \caption{Tetraedro \ce{SiO4} del zircón }
     \label{fig:zircon_td}
   \end{figure}
 \end{minipage}
@@ -370,7 +371,7 @@ donde $n$ es el número de enlaces, $d_i$ la distancia del enlace $i$, y $\bar{d
   \begin{figure}[H]
     \includegraphics[width=\linewidth]{Imagenes/1_ZIRCON/ZIRCON_Dode.png}
     \captionsetup{justification=centering}
-    \caption{Bisdisfenoide \ce{ZrO8} (Zr--O: \SI{2.13}{\angstrom}--\SI{2.27}{\angstrom}, BLD = 0.0318).}
+    \caption{Bisdisfenoide \ce{ZrO8}.}
     \label{fig:zircon_dode_fixed}
   \end{figure}
 \end{minipage}
@@ -378,6 +379,7 @@ donde $n$ es el número de enlaces, $d_i$ la distancia del enlace $i$, y $\bar{d
 \begin{minipage}[c]{0.70\textwidth} % Columna de IMAGEN (Derecha)
   \setlength{\parskip}{1em} % Mantiene espacio entre párrafos
   El poliedro \ce{ZrO8} exhibe geometría de bisdisfenoide con bimodalidad en distancias (4 cortas + 4 largas), volumen de \SI{22.13}{\cubic\angstrom} y coordinación efectiva de 7.45.
+  (Zr--O: \SI{2.13}{\angstrom}--\SI{2.27}{\angstrom}, BLD = 0.0318)
 \end{minipage}
 \vspace{0.5cm}
 
@@ -458,131 +460,18 @@ La representacion de los poliedros a lo largo del eje \(c\) (Figura \ref{fig:zir
   \label{tab:distorsion_zircon}
   \begin{tabular}{l c c}
     \toprule
-    Parámetro & \ce{SiO4} & \ce{ZrO8} \\
+    Parámetro                               & \ce{SiO4} & \ce{ZrO8} \\
     \midrule
-    Número de coordinación & 4 & 8 \\
-    Distancia media M--O (\si{\angstrom}) & 1.626 & 2.20 \\
-    Índice de distorsión (BLD) & 0.0000 & 0.0318 \\
-    Varianza angular (\si{\degree\squared}) & 97.71 & --- \\
-    Alargamiento cuadrático & 1.0238 & --- \\
-    Volumen (\si{\cubic\angstrom}) & 2.13 & 22.13 \\
+    Número de coordinación                  & 4         & 8         \\
+    Distancia media M--O (\si{\angstrom})   & 1.626     & 2.20      \\
+    Índice de distorsión (BLD)              & 0.0000    & 0.0318    \\
+    Varianza angular (\si{\degree\squared}) & 97.71     & ---       \\
+    Alargamiento cuadrático                 & 1.0238    & ---       \\
+    Volumen (\si{\cubic\angstrom})          & 2.13      & 22.13     \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-
-
-
-%! ============================================================================
-%! RECOMENDACIONES DE MEJORA PARA LA SECCIÓN 3.2 (XENÓTIMO)
-%! Estrategia: De la descripción a la comparación
-%! Fuente: README.md del repositorio
-%! ============================================================================
-
-%! ----------------------------------------------------------------------------
-%! 1. PÁRRAFO INTRODUCTORIO: ESTABLECER LA RELACIÓN
-%! ----------------------------------------------------------------------------
-%! En lugar de repetir la descripción del grupo espacial, enfatiza la 
-%! SUSTITUCIÓN ISOVALENTE y sus consecuencias.
-%!
-%! TEXTO SUGERIDO:
-%! "El Xenótimo cristaliza en el mismo grupo espacial que el Zircón (I4_1/amd), 
-%! constituyendo un ejemplo de isoestructuralismo derivado de la sustitución 
-%! heterovalente acoplada Zr^{4+} + Si^{4+} -> Y^{3+} + P^{5+}. Esta sustitución 
-%! mantiene la neutralidad de carga pero introduce diferencias significativas en 
-%! las distancias de enlace y la geometría poliédrica, consecuencia directa de 
-%! los distintos radios iónicos: r(Y^{3+}) = 1.019 Å vs. r(Zr^{4+}) = 0.84 Å 
-%! en coordinación 8."
-%! ----------------------------------------------------------------------------
-
-%! ----------------------------------------------------------------------------
-%! 2. TABLA COMPARATIVA (ELEMENTO CENTRAL)
-%! ----------------------------------------------------------------------------
-%! En lugar de repetir tablas individuales, crea una TABLA COMPARATIVA que 
-%! destaque las diferencias entre Zircón y Xenótimo.
-%!
-%! INCLUIR:
-%! - Parámetros de celda: a=b, c, V con diferencias porcentuales
-%! - Tetraedro TO4: distancia T-O, varianza angular, volumen
-%! - Dodecaedro MO8: distancias M-O corta/larga, BLD, volumen
-%!
-%! VER: tab:comparacion_zircon_xenotimo en README.md para plantilla completa
-%! ----------------------------------------------------------------------------
-
-%! ----------------------------------------------------------------------------
-%! 3. TEXTO ANALÍTICO (NO DESCRIPTIVO)
-%! ----------------------------------------------------------------------------
-%! Después de la tabla, INTERPRETA los datos en lugar de repetir descripciones.
-%!
-%! PUNTOS CLAVE A DESTACAR:
-%! - Expansión anisotrópica de la celda: parámetro a se expande (+4.1%), 
-%!   c permanece casi invariante (+0.5%)
-%! - Contracción del tetraedro: PO4 más pequeño que SiO4 (-13.6% volumen) 
-%!   por mayor carga de P^{5+}
-%! - Regularización del dodecaedro: BLD de YO8 es ~mitad del ZrO8
-%! ----------------------------------------------------------------------------
-
-%! ----------------------------------------------------------------------------
-%! 4. FIGURAS: SELECCIÓN ESTRATÉGICA
-%! ----------------------------------------------------------------------------
-%! NO REPITAS todas las proyecciones. Incluye solo las que aporten información 
-%! COMPARATIVA:
-%!
-%! ✅ SÍ INCLUIR:
-%! - Proyecciones a, b, c de la celda unitaria (con caption comparativo)
-%! - NUEVA figura comparativa lado a lado (Zircón vs Xenótimo, eje c)
-%!
-%! ⚠️ OPCIONAL:
-%! - Tetraedro PO4 individual (solo si muestras diferencia visual vs SiO4)
-%! - Dodecaedro YO8 individual (ídem)
-%!
-%! ❌ REDUCIR:
-%! - Proyecciones de poliedros para TODOS los ejes (incluir solo UNA 
-%!   proyección representativa)
-%! ----------------------------------------------------------------------------
-
-%! ----------------------------------------------------------------------------
-%! 5. FIGURA COMPARATIVA SUGERIDA (NUEVA)
-%! ----------------------------------------------------------------------------
-%! Crear figura con subfigures lado a lado:
-%! - (a) Zircón: proyección [001] desde ZIRCON_c0.png
-%! - (b) Xenótimo: proyección [001] desde XENOTIMO_c.png
-%!
-%! CAPTION SUGERIDO:
-%! "Comparación de la proyección a lo largo del eje c entre Zircón y Xenótimo. 
-%! A pesar del isoestructuralismo, se aprecia la expansión de los dodecaedros 
-%! YO8 (verde) respecto a los ZrO8."
-%! ----------------------------------------------------------------------------
-
-%! ----------------------------------------------------------------------------
-%! 6. CONEXIÓN CON APLICACIONES (CIERRE DE SECCIÓN)
-%! ----------------------------------------------------------------------------
-%! Termina conectando las diferencias estructurales con las propiedades:
-%!
-%! TEXTO SUGERIDO:
-%! "Estas diferencias estructurales tienen implicaciones directas en las 
-%! propiedades físicas y aplicaciones de ambos materiales. La mayor regularidad 
-%! del poliedro YO8 en el Xenótimo, combinada con la flexibilidad del sitio 
-%! para acomodar otros lantánidos pesados (Tb-Lu), fundamenta su uso como 
-%! matriz para la inmovilización de actínidos en residuos nucleares. 
-%! La contracción lantánida permite una modulación sistemática de los 
-%! parámetros de celda a lo largo de la serie LnPO4."
-%! ----------------------------------------------------------------------------
-
-%! ============================================================================
-%! RESUMEN DE LA ESTRATEGIA
-%! ============================================================================
-%!
-%! | Elemento              | Sec. 3.1 (Zircón)      | Sec. 3.2 (Xenótimo)      |
-%! |-----------------------|------------------------|--------------------------|
-%! | Enfoque               | Descriptivo completo   | COMPARATIVO              |
-%! | Grupo espacial        | Explicación detallada  | Ref. breve ("isoestruct.")|
-%! | Tabla de coordenadas  | Completa               | Mantener (Z diferente)   |
-%! | Tabla de distorsión   | Individual             | COMPARATIVA con Zircón   |
-%! | Figuras de poliedros  | Todas                  | Reducir + fig comparativa|
-%! | Texto                 | Descripción            | Análisis de diferencias  |
-%!
-%! ============================================================================
 
 \section{Xenótimo (\texorpdfstring{\ce{LnPO4}}{LnPO4}, Ln = Y, Tb-Lu)}
 Debido a la contracción lantánida, los lantánidos pesados (HREE) como el Y, Tb-Lu poseen un radio iónico similar al Zr\(^{4+}\). Esto permite que el \ce{YPO4} cristalice en la misma estructura tetragonal que el Zircón, manteniendo el grupo espacial \(I4_1/amd\). A pesar de ser isoestructurales \cite{chong_synthesis_2024}, la sustitución de Si\(^{4+}\) por P\(^{5+}\) y Zr\(^{4+}\) por Y\(^{3+}\) provoca una ligera expansión de la celda (volumen 286 vs 260 \(\text{\AA}^3\)), aunque el poliedro de coordinación \ce{YO8} conserva la geometría de dodecaedro del \ce{ZrO8}.
@@ -630,7 +519,7 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.8947, c = 
     \caption{Eje \(c\)}
     \label{fig:xenotimo_atoms_c}
   \end{subfigure}
-  \caption{Proyecciones de la celdilla unidad del xenótimo a lo largo de los ejes cristalográficos principales. Código de colores: Y (verde claro), P (naranja), O (rojo).}
+  \caption{Proyecciones de la celdilla unidad del xenótimo a lo largo de los ejes cristalográficos principales. Código de colores: Y (verde claro), P (naranja), O (gris).}
   \label{fig:xenotimo_uc}
 \end{figure}
 
@@ -658,14 +547,16 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=b=6.8947, c = 
   \centering
   \begin{figure}[H]
     \includegraphics[width=\linewidth]{Imagenes/2_XENOTIMO/XENOTIMO_Dode.png}
-    \caption{Bisdisfenoide \ce{YO8} (Y--O: \SI{2.31}{\angstrom}--\SI{2.38}{\angstrom}, BLD = 0.0149).}
+    \captionsetup{justification=centering}
+    \caption{Bisdisfenoide \ce{YO8} .}
     \label{fig:xenotimo_dode_fixed}
   \end{figure}
 \end{minipage}
 \hfill
 \begin{minipage}[c]{0.65\textwidth}
   \setlength{\parskip}{1em} % Mantiene espacio entre párrafos
-  El \ce{YO8} presenta la mitad de distorsión que el \ce{ZrO8} (BLD $\sim$50\% menor), consecuencia del mayor radio iónico del \ce{Y^{3+}}. Volumen: \SI{25.56}{\cubic\angstrom}.
+  El \ce{YO8} presenta la mitad de distorsión que el \ce{ZrO8} (BLD \(\sim\)50\% menor), consecuencia del mayor radio iónico del \ce{Y^{3+}}. Volumen: \SI{25.56}{\cubic\angstrom}.
+  (Y--O: \SI{2.31}{\angstrom}--\SI{2.38}{\angstrom}, BLD = 0.0149)
 \end{minipage}
 
 \vspace{0.5cm}
@@ -929,7 +820,7 @@ Los parámetros de la celda unitaria son \(a =6.76, b= 7.00, c= 6.44\) \si{\angs
     \caption{Eje \(c\)}
     \label{fig:monacita_atoms_c}
   \end{subfigure}
-  \caption{Proyecciones de la celdilla unidad de la monacita. Código de colores: Ce (amarillo), P (naranja), O (rojo).}
+  \caption{Proyecciones de la celdilla unidad de la monacita. Código de colores: Ce (amarillo), P (naranja), O (rosa).}
   \label{fig:monacita_uc}
 \end{figure}
 
@@ -1072,7 +963,7 @@ Los parámetros de la celda unitaria son \(a = b \neq c\) con \(a=7.0550\) \si{\
     \caption{Eje \(c\)}
     \label{fig:rhabdofano_atoms_c}
   \end{subfigure}
-  \caption{Proyecciones de la celdilla unidad del rhabdofano. Código de colores: Ce (amarillo), P (naranja), O (rojo), \ce{H2O} (azul).}
+  \caption{Proyecciones de la celdilla unidad del rhabdofano. Código de colores: Ce (amarillo), P (naranja), O (rosa), \ce{H2O} (azul).}
   \label{fig:rhabdofano_uc}
 \end{figure}
 
@@ -1170,11 +1061,7 @@ Las representaciones de los poliedros \ce{CeO8*0.67H2O} y \ce{PO4}, así como de
 \end{figure}
 
 \chapter{Conclusiones}
-El análisis cristalográfico comparativo de los ortofosfatos de lantánidos (\ce{LnPO4}) revela la influencia determinante del radio iónico y la hidratación sobre la estructura cristalina adoptada. El Zircón (\ce{ZrSiO4}) actúa como aristotipo para el Xenótimo, compartiendo el grupo espacial tetragonal \(I4_1/amd\) y número de coordinación 8. La contracción lantánida permite que los lantánidos pesados (HREE: Y, Tb-Lu) adopten esta estructura compacta de alta simetría.
 
-Por el contrario, los lantánidos ligeros (LREE: La-Gd), de mayor radio iónico, requieren la estructura monoclínica Monacita (\(P2_1/n\)) con número de coordinación 9, evidenciando una transición morfotrópica impulsada por factores estéricos. La hidratación introduce una complejidad adicional: la Churchita (monoclínica \(C2/c\)) y el Rhabdofano (hexagonal \(P6_222\)) son fases metaestables precursoras del Xenótimo y Monacita, respectivamente. Ambas incorporan moléculas de agua en su red cristalina, modificando la simetría y el entorno de coordinación.
-
-El estudio de estas modificaciones de simetría es fundamental para comprender las propiedades tecnológicas de estos materiales, incluyendo su estabilidad térmica, resistencia a la radiación y eficiencia fotoluminiscente, lo que justifica su aplicación en gestión de residuos nucleares, cerámicas avanzadas y dispositivos optoelectrónicos.
 
 \clearpage
 \addcontentsline{toc}{chapter}{Bibliografía} % Se añade al índice como un elemento no numerado
